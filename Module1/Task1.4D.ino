@@ -20,8 +20,7 @@ void setup()
   pinMode(MOTION_PIN, INPUT);
   estalish_group(TILT_PIN);
   estalish_group(LIGHT_PIN);
-  
-  attachInterrupt(digitalPinToInterrupt(MOTION_PIN), detect_motion, CHANGE);
+  estalish_group(MOTION_PIN);
   
   // Set LED pin to be output
   DDRB |= (1 << LED_PIN);
@@ -97,10 +96,13 @@ ISR (PCINT2_vect) // handle pin change interrupt for D0 to D7 here
     light_value = digitalRead(LIGHT_PIN);
   if(digitalRead(TILT_PIN) != tilt_value)
     tilt_value = digitalRead(TILT_PIN);
+  if(digitalRead(MOTION_PIN) != motion_value)
+    motion_value = digitalRead(MOTION_PIN);
 } 
 ISR(TIMER1_COMPA_vect)
 {
   PORTB ^= (1 << LED_PIN);
   check_tilt();
   check_light();
+  detect_motion();
 }
