@@ -5,7 +5,7 @@
 #include <algorithm>
 using namespace std;
 
-const int N = 1000000;
+const int N = 5000000;
 const int MAX_VALUE = 1000;
 
 bool is_sorted(vector<int> &source, vector<int> &target) {
