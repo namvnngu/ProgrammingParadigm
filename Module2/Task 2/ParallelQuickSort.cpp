@@ -6,9 +6,9 @@
 #include <omp.h>
 using namespace std;
 
-const int N = 5000000;
+const int N = 100000;
 const int MAX_VALUE = 1000;
-const int NUM_THREAD = 10;
+const int NUM_THREAD = 2;
 
 bool is_sorted(vector<int> &source, vector<int> &target) {
   sort(source.begin(), source.end());
@@ -58,7 +58,7 @@ int main() {
   int pivot;
   if(N > 1) pivot = partition(v, 0, N - 1);
   omp_set_num_threads(NUM_THREAD);
-  #pragma omp sections
+  #pragma omp sections nowait
   {
     #pragma omp section 
     if(pivot != 0) quick_sort(v, 0, pivot);
