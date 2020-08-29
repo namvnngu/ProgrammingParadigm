@@ -7,7 +7,7 @@
 #include <sstream>
 using namespace std;
 
-const int MAX_N = 100;
+const int MAX_N = 10000;
 
 void print_matrix(vector<vector<int>> matrix) {
   int column = matrix[0].size();

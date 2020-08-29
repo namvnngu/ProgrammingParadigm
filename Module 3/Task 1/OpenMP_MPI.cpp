@@ -5,13 +5,14 @@
 #include <fstream>
 #include <sstream>
 #include <mpi.h>
+#include <omp.h>
 using namespace std;
 
 #define MASTER 0
 #define MASTER_TAG 1
 #define WORKER_TAG 2
 const int MAX_N = 10;
-const int MATRIX_SIZE = 2000;
+const int MATRIX_SIZE = 100;
 int matrix_A[MATRIX_SIZE][MATRIX_SIZE];
 int matrix_B[MATRIX_SIZE][MATRIX_SIZE];
 int matrix_C[MATRIX_SIZE][MATRIX_SIZE];
@@ -132,6 +133,8 @@ int main(int argc, char *argv[]) {
     printf("\nNode worker %d received %d rows with row number %d from MASTER %d", process_id, rows, row_number, MASTER);
 
 
+
+    #pragma omp parallel for shared(matrix_A,matrix_B,matrix_C)
     for(int c = 0; c < MATRIX_SIZE; c++) {
       for(int r = 0; r < rows; r++) {
         matrix_C[r][c] = 0;
