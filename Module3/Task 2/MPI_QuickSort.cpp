@@ -9,7 +9,7 @@ using namespace std;
 #define MASTER 0
 #define MASTER_TAG 1
 #define WORKER_TAG 2
-const int N = 10;
+const int N = 5000000;
 const int MAX_VALUE = 1000;
 int v[N], test[N];
 const int mid = N / 2;
@@ -108,18 +108,18 @@ int main(int argc, char *argv[]) {
     while(right < N - mid)
       v[k++] = right_half[right++];
 
-    cout << "Left Half: ";
-    for(int i = 0; i < mid; i++)
-      cout << left_half[i] << ' ';
-    cout << '\n';
-    cout << "Right half: ";
-    for(int i = 0; i < N-mid; i++)
-      cout << right_half[i] << ' ';
-    cout << '\n';
-    cout << "The find sorted array: ";
-    for(int i = 0; i < N; i++)
-      cout << v[i] << ' ';
-    cout << '\n';
+    // cout << "Left Half: ";
+    // for(int i = 0; i < mid; i++)
+    //   cout << left_half[i] << ' ';
+    // cout << '\n';
+    // cout << "Right half: ";
+    // for(int i = 0; i < N-mid; i++)
+    //   cout << right_half[i] << ' ';
+    // cout << '\n';
+    // cout << "The find sorted array: ";
+    // for(int i = 0; i < N; i++)
+    //   cout << v[i] << ' ';
+    // cout << '\n';
 
     if(is_sorted(test, v))
       cout << "The vector is sorted";
