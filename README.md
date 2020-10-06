@@ -1,3 +1,7 @@
+<p align="center>
+   <img src="logo.svg"/>
+</p>
+                      
 # SIT315 Programming Paradigms
 
 **Module 1**
@@ -13,3 +17,4 @@
 **Module 3**
 - MPI Matrix Multiplication (+ OpenCL, OpenMP)
 - Quick Sort (MPI, OpenMP, OpenCL)
+ 
