@@ -10,6 +10,6 @@
 - Parallel Matrix Multiplication (OpenMP, PThread)
 - Quick Sort (OpenMP, PThread)
 
-**Moduel 3**
+**Module 3**
 - MPI Matrix Multiplication (+ OpenCL, OpenMP)
 - Quick Sort (MPI, OpenMP, OpenCL)
